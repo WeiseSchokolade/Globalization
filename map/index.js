@@ -1,7 +1,11 @@
 window.onload = () => {
 const countryNames = ["usa", "germany"]
-const countryColors = [[26, 0, 253, 255], [245, 0, 0, 255]]
+const countryColors = [[0, 0, 255, 255], [255, 0, 0, 255]]
 const worldmap = document.getElementById("worldmap");
+
+const relations = {
+	
+};
 
 const interactionMap = document.getElementById("interactionmap");
 const interactionCanvas = document.createElement("canvas");
@@ -26,6 +30,7 @@ function getCountry(x, y) {
     for (let i = 0; i < countries.length; i++) {
         let country = countries[i];
         var data = interactionContext.getImageData(x, y, 1, 1).data;
+		console.log(data);
         if (data[3] < 127) {
             continue;
         }
@@ -45,7 +50,7 @@ document.addEventListener("mousedown", (event) => {
             country.image.classList.remove("selected");
         } else {
             country.image.classList.add("selected");
-        }
+        }	
     }
 });
 

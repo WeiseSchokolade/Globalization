@@ -1,5 +1,6 @@
 body {
     margin: 0;
+	overflow: hidden;
 }
 
 .canvascontainer {
@@ -16,6 +17,10 @@ body {
 
 .overlaycanvas {
     z-index: 100;
+}
+
+#worldmap {
+	filter: brightness(60%);
 }
 
 .selected {
