@@ -1,6 +1,6 @@
 window.onload = () => {
 const countryNames = ["usa", "germany"]
-const countryColors = [[0, 0, 255, 255], [255, 0, 0, 255]]
+const countryColors = [[false, false, true], [true, false, false]]
 const worldmap = document.getElementById("worldmap");
 
 const relations = {
@@ -12,7 +12,6 @@ const interactionCanvas = document.createElement("canvas");
 interactionCanvas.width = interactionMap.width;
 interactionCanvas.height = interactionMap.height;
 const interactionContext = interactionCanvas.getContext("2d");
-interactionContext.imageSmoothingEnabled = false;
 interactionContext.drawImage(interactionMap, 0, 0, interactionMap.width, interactionMap.height);
 interactionMap.hidden = "hidden";
 
@@ -27,16 +26,17 @@ for (let i = 0; i < countryNames.length; i++) {
 }
 
 function getCountry(x, y) {
+    var data = interactionContext.getImageData(x, y, 1, 1);
+    data = data.data;
+    if (data[3] < 127) {
+        return null;
+    }
+
     for (let i = 0; i < countries.length; i++) {
         let country = countries[i];
-        var data = interactionContext.getImageData(x, y, 1, 1).data;
-		console.log(data);
-        if (data[3] < 127) {
-            continue;
-        }
-        if (data[0] == country.color[0] &&
-            data[1] == country.color[1] &&
-            data[2] == country.color[2]) {
+        if (country.color[0] == (data[0] > 127) &&
+            country.color[1] == (data[1] > 127) &&
+            country.color[2] == (data[2] > 127)) {
             return country;
         }
     }
