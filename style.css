@@ -1,6 +1,7 @@
 body {
     margin: 0px;
     height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .background {
@@ -14,7 +15,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-blend-mode: color;
-    filter: blur(8px);
+    filter: blur(8px) brightness(80%);
 }
 
 .baseSplit {
@@ -23,6 +24,7 @@ body {
     height: 100%;
     flex-wrap: wrap;
     align-items: flex-start;
+    justify-content: center;
 }
 
 .baseSplit > .infocard {
@@ -30,11 +32,9 @@ body {
     flex-direction: column;
     flex: 1;
     margin: 50px;
-    background: linear-gradient(to left, white, rgb(123, 240, 255));
+    background-color: rgb(177, 246, 255);
     min-width: 300px;
     border-radius: 18px;
-    filter: drop-shadow(0px 0px 15px black);
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .infocard > h1 {
@@ -44,12 +44,19 @@ body {
 .contentcard {
     flex: 1;
     background-color: white;
-    border-radius: inherit;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
 }
 
 .contentcard > img {
     width: 100%;
     border-radius: inherit;
+}
+
+.mapcontentcard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .maplink {
@@ -58,23 +65,20 @@ body {
 }
 
 .hoverscale {
-    transition-property: transform;
-    transition-duration: 0.2s;
+    transition: transform 0.2s;
+    
 }
 
 .hoverscale:hover {
-    transform: scale(102%);
+    transform: scale(104%);
 }
 
 .maptext {
     position: absolute;
     text-align: center;
     font-size: xx-large;
-    width: 100%;
-    color: darkblue;
-    margin-top: auto;
-    margin-bottom: auto;
-    transform: translate(0, -18.5vh);
+    color: rgb(0, 80, 184);
+    font-weight: bolder;
 }
 
 .contentcardmargin {
@@ -83,4 +87,11 @@ body {
 
 iframe {
     border-radius: 15px;
+}
+
+.copyrightnotice {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    margin: 2px;
 }

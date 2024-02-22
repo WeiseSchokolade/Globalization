@@ -1,19 +1,46 @@
 window.onload = () => {
+
+const Relation = {
+    BAD: {color: "red"},
+    SEMI: {color: "yellow"},
+    GOOD: {color: "green"}
+}    
+
+const countryData = [
+    {
+        name: "usa",
+        color: [false, false, true]
+    },
+    {
+        name: "germany",
+        color: [true, false, false],
+    },
+    {
+        name: "china",
+        color: [false, true, false]
+    },
+    {
+        name: "japan",
+        color: [true, true, false],
+    }
+]
 const countryNames = ["usa", "germany", "china", "japan"];
 const countryColors = [[false, false, true], [true, false, false], [false, true, false], [true, true, false]];
 const worldmap = document.getElementById("worldmap");
-
-const relations = {
-	
-};
+let selectedCountry;
 
 const interactionMap = document.getElementById("interactionmap");
 const interactionCanvas = document.createElement("canvas");
-interactionCanvas.width = interactionMap.width;
-interactionCanvas.height = interactionMap.height;
-const interactionContext = interactionCanvas.getContext("2d");
-interactionContext.drawImage(interactionMap, 0, 0, interactionMap.width, interactionMap.height);
-interactionMap.hidden = "hidden";
+let interactionContext;
+function drawInteractionMap() {
+    console.log("L");
+    interactionCanvas.width = interactionMap.width;
+    interactionCanvas.height = interactionMap.height;
+    interactionContext = interactionCanvas.getContext("2d");
+    interactionContext.drawImage(interactionMap, 0, 0, interactionMap.width, interactionMap.height);
+    interactionMap.hidden = "hidden";
+}
+drawInteractionMap();
 
 let countries = [];
 for (let i = 0; i < countryNames.length; i++) {
@@ -43,8 +70,8 @@ function getCountry(x, y) {
     return null;
 }
 
-document.addEventListener("mousedown", (event) => {
-    let country = getCountry(event.offsetX, event.offsetY);
+function click(x, y) {
+    let country = getCountry(x, y);
     if (country != null) {
         if (country.image.classList.contains("selected")) {
             country.image.classList.remove("selected");
@@ -52,7 +79,9 @@ document.addEventListener("mousedown", (event) => {
             country.image.classList.add("selected");
         }	
     }
-});
+};
 
+document.addEventListener("mousedown", (event) => click(event.offsetX, event.offsetY));
 document.children[0].appendChild(interactionCanvas);
+document.addEventListener("resize", drawInteractionMap);
 }
