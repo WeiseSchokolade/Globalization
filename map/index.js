@@ -1,6 +1,6 @@
 window.onload = () => {
-const countryNames = ["usa", "germany"]
-const countryColors = [[false, false, true], [true, false, false]]
+const countryNames = ["usa", "germany", "china"]
+const countryColors = [[false, false, true], [true, false, false], [false, true, false]]
 const worldmap = document.getElementById("worldmap");
 
 const relations = {
