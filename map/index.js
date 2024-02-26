@@ -73,6 +73,17 @@ const states = {
 		zusatz: [],
 		deutung: [],
 		darken: true
+	},
+	nato_map: {
+		elements: [
+			document.getElementById("natomap")
+		],
+		button: "layernatobutton",
+		header: "NATO",
+		legende: ["Länder der NATO sind weiß hervorgehoben"],
+		zusatz: [],
+		deutung: [],
+		darken: true
 	}
 }
 
@@ -153,6 +164,7 @@ document.getElementById("layerexportbutton").onclick = () => selectLayer(states.
 document.getElementById("layerimportbutton").onclick = () => selectLayer(states.import_map);
 document.getElementById("layerjeansbutton").onclick = () => selectLayer(states.jeans_map);
 document.getElementById("layereubutton").onclick = () => selectLayer(states.eu_map);
+document.getElementById("layernatobutton").onclick = () => selectLayer(states.nato_map);
 
 const Relation = {
     BAD: {color: "red"},
@@ -238,6 +250,11 @@ function click(x, y) {
 
 document.addEventListener("mousedown", (event) => click(event.offsetX, event.offsetY));
 document.addEventListener("resize", drawInteractionMap);
+
+for (element of document.getElementsByClassName("defaulthidden")) {
+    element.hidden = "hidden";
+}
+document.getElementById("loadingoverlay").style.display = "none";
 
 applyData(states.default);
 }

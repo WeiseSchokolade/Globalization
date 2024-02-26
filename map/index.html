@@ -13,16 +13,17 @@
             <canvas id="overlaycanvas"></canvas>
             <img id="worldmap" src="../assets/world_map.png" alt="Weltkarte">
             <img id="interactionmap" src="../assets/interaction_map.png">
-            <img class="countrymap" id="mapusa" src="../assets/world_map_usa.png" alt="Karte der Vereinigten Staaten" hidden="hidden">
-            <img class="countrymap" id="mapgermany" src="../assets/world_map_germany.png"
-                alt="Karte der Bundesrepublik Deutschlands" hidden="hidden">
-            <img class="countrymap" id="mapchina" src="../assets/world_map_china.png"
-                alt="Karte der Volksrepublik China" hidden="hidden">
-            <img class="countrymap" id="mapjapan" src="../assets/world_map_japan.png" alt="Karte von Japan" hidden="hidden">
-            <img id="exportmap" src="../assets/world_map_trading_exp_3.png" hidden="hidden">
-            <img id="importmap" src="../assets/world_map_trading_imp_2.png" hidden="hidden">
-			<img id="jeansmap" src="../assets/world_map_jeans.png" hidden="hidden">
-			<img id="eumap" src="../assets/world_map_eu_2.png" hidden="hidden">
+            <img class="countrymap defaulthidden" id="mapusa" src="../assets/world_map_usa.png" alt="Karte der Vereinigten Staaten">
+            <img class="countrymap defaulthidden" id="mapgermany" src="../assets/world_map_germany.png"
+                alt="Karte der Bundesrepublik Deutschlands">
+            <img class="countrymap defaulthidden" id="mapchina" src="../assets/world_map_china.png"
+                alt="Karte der Volksrepublik China">
+            <img class="countrymap defaulthidden" id="mapjapan" src="../assets/world_map_japan.png" alt="Karte von Japan">
+            <img id="exportmap" class="defaulthidden" src="../assets/world_map_trading_exp_3.png">
+            <img id="importmap" class="defaulthidden" src="../assets/world_map_trading_imp_2.png">
+			<img id="jeansmap" class="defaulthidden" src="../assets/world_map_jeans.png">
+			<img id="eumap" class="defaulthidden" src="../assets/world_map_eu_2.png">
+			<img id="natomap" class="defaulthidden" src="../assets/world_map_nato_3.png">
         </div>
     </div>
     <div class="layerchooser">
@@ -55,6 +56,14 @@
 
             </div>
             <a href="../" class="backlink">Zurück zum Hauptmenü</a>
+        </div>
+    </div>
+    <div id="loadingoverlay" class="loadingoverlay">
+        Lädt
+        <div class="loadinganimation">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
         </div>
     </div>
     <script src="index.js"></script>
