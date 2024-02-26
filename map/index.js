@@ -117,11 +117,13 @@ function collapse(collapsed) {
     if (collapsed) {
         buttonContent.classList.remove("triangleup");
         buttonContent.classList.add("triangledown");
-        infobox.style.maxHeight = null;
+        infobox.classList.remove("uncollapsed");
+        //infobox.style.maxHeight = null;
     } else {
         buttonContent.classList.add("triangleup");
         buttonContent.classList.remove("triangledown");
-        infobox.style.maxHeight = infobox.scrollHeight + "px";
+        infobox.classList.add("uncollapsed");
+        //infobox.style.maxHeight = infobox.scrollHeight + "px";
     }
 };
 document.getElementById("collapseinfobutton").addEventListener("click", () => collapse(!collapsedInfobox));
@@ -273,7 +275,12 @@ function click(x, y) {
 };
 
 document.addEventListener("mousedown", (event) => click(event.offsetX, event.offsetY));
-document.addEventListener("resize", drawInteractionMap);
+document.addEventListener("resize", () => {
+    drawInteractionMap();
+    if (!collapsedInfobox) {
+        collapse(false);
+    }
+});
 
 for (element of document.getElementsByClassName("defaulthidden")) {
     element.hidden = "hidden";

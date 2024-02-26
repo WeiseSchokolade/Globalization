@@ -10,6 +10,7 @@ body {
     left: 5px;
     bottom: 5px;
     z-index: 100;
+    flex-wrap: wrap;
 }
 
 .layerbutton {
@@ -109,6 +110,41 @@ body {
     border-bottom: solid 2px gray;
 }
 
+@media (width < 540px) {
+    .infobox {
+        width: auto;
+        left: 0px;
+        right: auto;
+        border-left: none;
+        border-bottom-left-radius: 0px;
+        font-size: small;
+    }
+
+    .infocontent {
+        width: 100%;
+    }
+
+    .infocontent > * > * {
+        width: 100%;
+    }
+
+    .infocontent > * > * > * {
+        width: 100%;
+    }
+}
+
+@media (width < 440px) {
+    .infobox {
+        font-size: x-small;
+    }
+}
+
+@media (width < 340px) {
+    .infobox {
+        font-size: xx-small;
+    }
+}
+
 #infoheader {
     margin: 0px;
 }
@@ -143,18 +179,23 @@ body {
     border-top: 5px solid black;
 }
 
-#infobox {
+.infocontent {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s;
 }
 
-#infobox > h2 {
+.uncollapsed {
+    max-height: 40vh;
+    overflow: scroll;
+}
+
+.infocontent > h2 {
     margin-top: 10px;
     margin-bottom: 0px;
 }
 
-#infobox > #infozusatz > * {
+.infocontent > #infozusatz > * {
     margin-top: 5px;
 }
 
