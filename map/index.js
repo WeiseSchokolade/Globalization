@@ -84,6 +84,28 @@ const states = {
 		zusatz: [],
 		deutung: [],
 		darken: true
+	},
+	g7_map: {
+		elements: [
+			document.getElementById("g7map")
+		],
+		button: "layerg7button",
+		header: "G7",
+		legende: ["Länder der G7 sind weiß hervorgehoben"],
+		zusatz: [],
+		deutung: [],
+		darken: true
+	},
+	g20_map: {
+		elements: [
+			document.getElementById("g20map")
+		],
+		button: "layerg20button",
+		header: "G20",
+		legende: ["Länder der G20 sind weiß hervorgehoben"],
+		zusatz: [],
+		deutung: [],
+		darken: true
 	}
 }
 
@@ -165,6 +187,8 @@ document.getElementById("layerimportbutton").onclick = () => selectLayer(states.
 document.getElementById("layerjeansbutton").onclick = () => selectLayer(states.jeans_map);
 document.getElementById("layereubutton").onclick = () => selectLayer(states.eu_map);
 document.getElementById("layernatobutton").onclick = () => selectLayer(states.nato_map);
+document.getElementById("layerg7button").onclick = () => selectLayer(states.g7_map);
+document.getElementById("layerg20button").onclick = () => selectLayer(states.g20_map);
 
 const Relation = {
     BAD: {color: "red"},

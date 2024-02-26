@@ -170,12 +170,7 @@ body {
 	filter: brightness(60%);
 }
 
-#eumap {
-    filter: drop-shadow(0px 0px 7px white);
-	opacity: 100%;
-}
-
-#natomap {
+.monochromemap {
     filter: drop-shadow(0px 0px 7px white);
 	opacity: 100%;
 }
