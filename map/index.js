@@ -1,5 +1,6 @@
 window.onload = () => {
 const worldmap = document.getElementById("worldmap");
+const mapbackground = document.getElementById("mapbackground");
 let state = null;
 
 const states = {
@@ -28,7 +29,7 @@ const states = {
                 "- 97 Milliarden nach China.",
 				"Die Güter, welche Deutschland am meisten exportiert, sind Kraft- und Landfahrzeuge, Maschinen sowie elektrotechnische Erzeugnisse. Dabei gibt es keine Auffälligkeiten, es ist bei jedem Land ähnlich."
             ],
-        deutung: ["Auf dieser Karte sind die wichtigsten Abnehmer deutscher Exportprodukte leicht erkennenbar. Die USA, China und Länder der EU sind am stärksten beteiligt.",
+        deutung: ["Auf dieser Karte sind die wichtigsten Abnehmer deutscher Exportprodukte leicht erkennbar. Die USA, China und Länder der EU sind am stärksten beteiligt.",
                 "Würde einer dieser Märkte wegfallen, gäbe es schwere Folgen für die deutsche Wirtschaft. Große Konzerne müssten Werke schließen, da der deutsche Markt offensichtlich zu klein für die hiesigen Produktionskapazitäten ist."]
     },
     import_map: {
@@ -120,8 +121,10 @@ function applyData(state) {
     }
 	if (state.darken) {
 		worldmap.classList.add("darken");
+		mapbackground.classList.add("darken");
 	} else {
 		worldmap.classList.remove("darken");
+		mapbackground.classList.remove("darken");
 	}
 }
 
