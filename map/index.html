@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="mappositioner">
+    <div id="mappositioner" class="mappositioner">
         <div class="canvascontainer">
             <canvas id="overlaycanvas"></canvas>
             <img id="worldmap" src="../assets/world_map.png" alt="Weltkarte">
@@ -22,15 +22,20 @@
             <img class="countrymap" id="mapjapan" src="../assets/world_map_japan.png" alt="Karte von Japan" hidden="hidden">
             <img id="exportmap" src="../assets/world_map_trading_exp_3.png" hidden="hidden">
             <img id="importmap" src="../assets/world_map_trading_imp_2.png" hidden="hidden">
+			<img id="jeansmap" src="../assets/world_map_jeans.png" hidden="hidden">
+			<img id="eumap" src="../assets/world_map_eu_2.png" hidden="hidden">
         </div>
     </div>
     <div class="layerchooser">
         <button class="layerbutton" id="layernonebutton">❌</button>
-        <button class="layerbutton" id="layerrelationsbutton">🌍♥️</button>
-        <button class="layerbutton" id="layerjeansbutton">👖🗺️</button>
-        <button class="layerbutton" id="layerfreetradebutton">🤝💰</button>
         <button class="layerbutton" id="layerexportbutton">🇩🇪➡️</button>
         <button class="layerbutton" id="layerimportbutton">🇩🇪⬅️</button>
+        <button class="layerbutton" id="layerjeansbutton">👖🗺️</button>
+        <button class="layerbutton" id="layereubutton">🇪🇺</button>
+        <button class="layerbutton" id="layernatobutton">NATO</button>
+        <button class="layerbutton" id="layerg7button">G7</button>
+        <button class="layerbutton" id="layerg7button">G20</button>
+        <button class="layerbutton" id="layerfreetradebutton">🤝💰</button>
     </div>
     <div class="infobox">
         <div class="infoheadercontainer">
