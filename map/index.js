@@ -165,6 +165,7 @@ function applyData(state) {
 
 function selectLayer(newState) {
     if (state != null || state == newState) {
+        if (state == null) return;
         document.getElementById(state.button).classList.remove("buttonselect");
         for (element of state.elements) {
             element.hidden="hidden";
