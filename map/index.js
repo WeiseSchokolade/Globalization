@@ -1,4 +1,5 @@
 window.onload = () => {
+const worldmap = document.getElementById("worldmap");
 let state = null;
 
 const states = {
@@ -24,7 +25,8 @@ const states = {
                 "- 158 Milliarden in die USA, ",
                 "- 117 Milliarden nach Frankreich, ",
                 "- 111 Milliarden in die Niederlande sowie ",
-                "- 97 Milliarden nach China."
+                "- 97 Milliarden nach China.",
+				"Die Güter, welche Deutschland am meisten exportiert, sind Kraft- und Landfahrzeuge, Maschinen sowie elektrotechnische Erzeugnisse. Dabei gibt es keine Auffälligkeiten, es ist bei jedem Land ähnlich."
             ],
         deutung: ["Auf dieser Karte sind die wichtigsten Abnehmer deutscher Exportprodukte leicht erkennenbar. Die USA, China und Länder der EU sind am stärksten beteiligt.",
                 "Würde einer dieser Märkte wegfallen, gäbe es schwere Folgen für die deutsche Wirtschaft. Große Konzerne müssten Werke schließen, da der deutsche Markt offensichtlich zu klein für die hiesigen Produktionskapazitäten ist."]
@@ -40,13 +42,37 @@ const states = {
                 "- 156 Milliarden aus China, ",
                 "- 103 Milliarden aus den Niederlande, ",
                 "- 94 Milliarden aus den USA sowie ",
-                "- 80 Milliarden aus Polen."
+                "- 80 Milliarden aus Polen.",
+				"Aus China und Polen machte Elektrotechnik den am meisten importierten Anteil aus, während aus den USA hauptsächlich Maschinen und aus der Niederlande hauptsächlich Pharmazieprodukte importiert wurden."
             ],
         deutung: [
                 "Auf dieser Karte sind die wichtigsten Quellen von Waren in Deutschland sichtbar. China, die USA, und die EU-Länder spielen auch hier wieder eine große Rolle.",
                 "Da systemkritische Produkte wie Antibiotika und Elektrotechnik importiert werden, würde ein Wegfall dieser Import-Länder einen Zusammenbruch der hiesigen Gesellschaft bedeuten."
             ]
-    }
+    },
+	jeans_map: {
+		elements: [
+			document.getElementById("jeansmap")
+		],
+		button: "layerjeansbutton",
+		header: "(Bsp) Warenkette einer Jeans",
+		legende: ['<div style="display: flex; flex-direction: row"><div style="color: blue; margin-right: 5px;">→</div> Weg</div>'],
+		zusatz: ["Gesamte Wegstrecke: über 50.000 km",
+			"Kasachstan → Türkei → China → Polen → Bangladesch → China → Belgien → Deutschland → Ostafrika"
+		],
+		deutung: ["Auf dieser Karte ist ersichtlich, wie vernetzt unsere Welt eigentlich ist. Eine einzige Jeans reist durch (mindestens) 8 verschiedene Länder, weil in jedem eine bestimmte Voraussetzung/Gegenheit geben ist, sodass die Lieferkette über genau dieses Land am gewinnbringensten ist."]
+	},
+	eu_map: {
+		elements: [
+			document.getElementById("eumap")
+		],
+		button: "layereubutton",
+		header: "EU",
+		legende: ["Länder der EU sind weiß hervorgehoben"],
+		zusatz: [],
+		deutung: [],
+		darken: true
+	}
 }
 
 let collapsedInfobox = false;
@@ -92,6 +118,11 @@ function applyData(state) {
     if (!collapsedInfobox) {
         collapse(false);
     }
+	if (state.darken) {
+		worldmap.classList.add("darken");
+	} else {
+		worldmap.classList.remove("darken");
+	}
 }
 
 function selectLayer(newState) {
@@ -117,6 +148,8 @@ function selectLayer(newState) {
 document.getElementById("layernonebutton").onclick = () => selectLayer(state);
 document.getElementById("layerexportbutton").onclick = () => selectLayer(states.export_map);
 document.getElementById("layerimportbutton").onclick = () => selectLayer(states.import_map);
+document.getElementById("layerjeansbutton").onclick = () => selectLayer(states.jeans_map);
+document.getElementById("layereubutton").onclick = () => selectLayer(states.eu_map);
 
 const Relation = {
     BAD: {color: "red"},
@@ -144,7 +177,6 @@ const countryData = [
 ]
 const countryNames = ["usa", "germany", "china", "japan"];
 const countryColors = [[false, false, true], [true, false, false], [false, true, false], [true, true, false]];
-const worldmap = document.getElementById("worldmap");
 let selectedCountry;
 
 const interactionMap = document.getElementById("interactionmap");
