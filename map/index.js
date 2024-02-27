@@ -9,7 +9,8 @@ const states = {
         legende: ["Maßstab 1:35000000"],
         zusatz: ['Basiskarte: <a href="https://commons.wikimedia.org/wiki/File:1-12_Color_Map_World.png">Colomet</a>, Public domain, via Wikimedia Commons',
                 'Import/Export-Informationen: <a href="www-genesis.destatis.de">www-genesis.destatis.de</a>',
-                "Alle Daten Stand 2023."
+                'Zudem: Statista',
+                "Daten Stand 2023, außer andersweitig genannt."
                 ],
         deutung: [
                 "Zu jeder Karte gibt es eine Deutung, was sich aus dieser schließen lässt. Stöber gerne durch alle Ebenen!"
@@ -68,10 +69,14 @@ const states = {
 			document.getElementById("eumap")
 		],
 		button: "layereubutton",
-		header: "EU",
+		header: "Europäische Union (EU)",
 		legende: ["Länder der EU sind weiß hervorgehoben"],
-		zusatz: [],
-		deutung: [],
+		zusatz: ["Die Europäische Union ist ein Bund aus Ländern Europas, welcher seine Anfänge (u.a.) 1951 in der EGKS (Europäische Gemeinschaft für Kohle und Stahl) fand. Sie befasst sich mit wirtschaftlichen, kulturellen und sonstigen politischen Themen. Grundsätzlich steht ihr Recht über dem Recht der einzelnen Länder, greift aber nicht direkt in die dortige Rechtssprechung ein.",
+            "58% der deutschen Exporte (Waren im Wert von 692 Milliarden Euro) gingen in die EU",
+            "58% der deutschen Importe (Waren im Wert von 551 Milliarden Euro) kamen aus der EU",
+            "(Stand 2015)"],
+		deutung: ["Die EU ist ein wichtiger Faktor der deutschen, wirtschaftlichen Globalisierung. Die Abhänigkeit Deutschlands ist dabei eindeutig: Wenn Waren in diesen Größenordnungen mit dem Ausland gehandelt werden, so hätte ein Abschnitt dieser dramatische Folgen für Deutschland.",
+            "Abgesehen von der wirtschaftlichen Dimension bietet die EU zudem die politische Stabilität Europas; In den 70 Jahren vor der EGKS gab es alleine zwischen Frankreich und Deutschland 3 Kriege."],
 		darken: true
 	},
 	nato_map: {
@@ -81,8 +86,8 @@ const states = {
 		button: "layernatobutton",
 		header: "NATO",
 		legende: ["Länder der NATO sind weiß hervorgehoben"],
-		zusatz: [],
-		deutung: [],
+		zusatz: ["Die NATO (engl. North Atlantic Treaty Organization) ist ein Militärbündnis verschiedener Staaten der westlichen Nordhalbkugel. Sie bildete den westlichen Gegenpol zur Sowjetunion."],
+		deutung: ["Die Nato bildet durch die Teilnahme mehrerer Atommächte wie die USA, Großbritannien und Frankreich einen effektiven, militärischen Schutz großer Teile Europas. Ohne ihr Einwirken hätte sich die Geopolitik der zweiten Hälfte des 20. Jahrhunderts vermutlich anders verändert."],
 		darken: true
 	},
 	g7_map: {
@@ -92,8 +97,14 @@ const states = {
 		button: "layerg7button",
 		header: "G7",
 		legende: ["Länder der G7 sind weiß hervorgehoben"],
-		zusatz: [],
-		deutung: [],
+		zusatz: ["Die G7 ist, wie die G20, eine informelle Konferenz bedeutender Wirtschaftsnationen des Westens.",
+                "Länder: Deutschland, Frankreich, Italien, Japan, Kanada, USA, Großbritannien",
+                "Das summierte Bruttoinlandsprodukt der G7 betrug 2022 etwa 43,8 Billionen, 43,7% des Bruttoweltprodukts wurde somit in diesen Ländern produziert.",
+                "Einen nicht-westlichen Gegenpol zur G7 bieten die BRICS-Staaten."
+            ],
+		deutung: [
+            "Die G7 sind ein Beispiel für die Zusammenarbeit großer Nationen. Ein Austritt aus den G7 Deutschlands hätte zwar nicht direkt wirtschaftliche Folgen, in der Symbolik würde es aber den Abbrauch der Kooperation und den Rückgang der Vernetzung bedeuten."
+        ],
 		darken: true
 	},
 	g20_map: {
@@ -102,9 +113,21 @@ const states = {
 		],
 		button: "layerg20button",
 		header: "G20",
-		legende: ["Länder der G20 sind weiß hervorgehoben"],
-		zusatz: [],
-		deutung: [],
+		legende: [
+            'Mitgliedsländer der G20 = Weiß',
+            'Durch die europäische Union (EU) vertreten = <span style="background-color: #154393; color: white; margin: 2px; border-radius: 3px;">Blau</span>',
+            'Durch die afrikanische Union (AU) vertreten = <span style="background-color: #1d5a1e; color: white; margin: 2px; border-radius: 3px">Grün</span>'
+        ],
+		zusatz: [
+            "Die G20 ist, wie die G7, eine informelle Konferenz bedeutender Nationen weltweit. Sie berät u.a. über die internationale Wirtschaft",
+            "Mitgliedsländer (Auszug): China, USA, Russland, Deutschland, Indien, Brasilien, Frankreich",
+            "Anteil an der Weltbevölkerung: 79%",
+            "Anteil an Bruttoweltprodukt: 85%",
+        ],
+		deutung: [
+            "Die G20 sind ein Beispiel für die globalisierte Zusammenarbeit - Länder aus allen \"Ecken\" der Welt nehmen an den Treffen teil und vertreten die jeweilige Region.",
+            "Ein Austritt Deutschlands hätte hier, wie bei den G7, keinen direkten Einfluss auf die Wirtschaft, bedeutete aber auch wieder symbolisch ein Verlust von Kooperation und Globalisierung."
+        ],
 		darken: true
 	}
 }
