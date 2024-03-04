@@ -42,7 +42,7 @@ const states = {
         legende: ["Je heller, desto mehr wird aus diesem Land importiert.", "Größenordnung: Weiß = China (ca. 156 Milliarden)"],
         zusatz: ["Insgesamt importierte Deutschland 2023 Waren im Wert von 1,4 Billionen Euro, davon Waren im Wert von",
                 "- 156 Milliarden aus China, ",
-                "- 103 Milliarden aus den Niederlande, ",
+                "- 103 Milliarden aus der Niederlande, ",
                 "- 94 Milliarden aus den USA sowie ",
                 "- 80 Milliarden aus Polen.",
 				"Aus China und Polen machte Elektrotechnik den am meisten importierten Anteil aus, während aus den USA hauptsächlich Maschinen und aus der Niederlande hauptsächlich Pharmazieprodukte importiert wurden."
